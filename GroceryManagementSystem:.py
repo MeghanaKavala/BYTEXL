@@ -35,6 +35,7 @@ if __name__ == "__main__":
     grocery_system.add_item("Apple", 10)
     grocery_system.add_item("Banana", 15)
     grocery_system.add_item("Orange", 20)
+    grocery_system.add_item("Mangos",30)
     grocery_system.display_inventory()
     grocery_system.update_quantity("Apple", 5)
     grocery_system.remove_item("Banana")
