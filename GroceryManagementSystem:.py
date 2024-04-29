@@ -29,14 +29,27 @@ class GroceryManagementSystem:
             print(f"{item}: {quantity}")
 
 
-
 if __name__ == "__main__":
     grocery_system = GroceryManagementSystem()
-    grocery_system.add_item("Apple", 10)
-    grocery_system.add_item("Banana", 15)
-    grocery_system.add_item("Orange", 20)
-    grocery_system.add_item("Mangos",30)
-    grocery_system.display_inventory()
-    grocery_system.update_quantity("Apple", 5)
-    grocery_system.remove_item("Banana")
-    grocery_system.display_inventory()
+    while True:
+        print("\n1. Add item\n2. Update quantity\n3. Remove item\n4. Display inventory\n5. Exit")
+        choice = input("Enter your choice: ")
+        
+        if choice == "1":
+            item = input("Enter item name: ")
+            quantity = int(input("Enter quantity: "))
+            grocery_system.add_item(item, quantity)
+        elif choice == "2":
+            item = input("Enter item name: ")
+            new_quantity = int(input("Enter new quantity: "))
+            grocery_system.update_quantity(item, new_quantity)
+        elif choice == "3":
+            item = input("Enter item name: ")
+            grocery_system.remove_item(item)
+        elif choice == "4":
+            grocery_system.display_inventory()
+        elif choice == "5":
+            print("Exiting...")
+            break
+        else:
+            print("Invalid choice. Please enter a number between 1 and 5.")
